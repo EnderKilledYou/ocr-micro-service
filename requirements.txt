@@ -1,0 +1,4 @@
+pytest
+pytesseract
+numpy
+waitress
