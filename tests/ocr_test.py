@@ -15,9 +15,8 @@ def client():
     ctx.pop()
 
 
-def test_login_logout(client):
+def test_image_upload(client):
     """Make image upload works."""
-    print("hi")
     with open('test_image.png', 'rb') as test_image:
         data = {
             'image': (test_image, 'test_image.png')
