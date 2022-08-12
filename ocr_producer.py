@@ -5,9 +5,11 @@ from ocr_result import OcrResult
 
 
 class OcrProducer:
+    time_out: int
     consumers = []
 
-    def __init__(self, thread_count=20):
+    def __init__(self, thread_count=20, time_out: int = 15):
+        self.time_out = time_out
         self.consumers = []
         for i in range(0, thread_count):
             self.consumers.append(OcrConsumer(self))
@@ -29,7 +31,7 @@ class OcrProducer:
 
     def get_one(self):
         try:
-            return self.queue.get(True, 15)
+            return self.queue.get(True, self.time_out)
         except:
             return None
 
