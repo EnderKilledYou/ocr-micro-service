@@ -16,7 +16,7 @@ def client():
 
 
 def test_login_logout(client):
-    """Make sure login and logout works."""
+    """Make image upload works."""
     print("hi")
     with open('test_image.png', 'rb') as test_image:
         data = {
